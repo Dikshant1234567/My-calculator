@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="top"></div>
+      <hr />
+      <div class="bottom">
+        <div class="key">Ac</div>
+        <div class="key">%</div>
+        <div class="key"><img id ="clear" src="clear.png" alt="" /></div>
+        <div class="key">/</div>
+        <div class="key">7</div>
+        <div class="key">8</div>
+        <div class="key">9</div>
+        <div class="key">*</div>
+        <div class="key">4</div>
+        <div class="key">5</div>
+        <div class="key">6</div>
+        <div class="key">-</div>
+        <div class="key">1</div>
+        <div class="key">2</div>
+        <div class="key">3</div>
+        <div class="key">+</div>
+        <div class="key">00</div>
+        <div class="key">0</div>
+        <div class="key">.</div>
+        <div id="equal" class="key">=</div>
+      </div>
+    </div>
+
+    <script>
+        
+      let equal = document.getElementById("equal");
+      let output = document.getElementsByClassName("top")[0];
+      let key = Array.from(document.getElementsByClassName("key"));
+      console.log(key);
+
+      key.map((key) => {
+       key.addEventListener('click' , (e)=>{
+        switch(e.target.innerText){
+            case"Ac" :
+            output.innerText = "";
+            break;
+            
+            case " document.getElementById('clear')":
+            if( output.innerText){
+                output.innerText =  output.innerText.splice(0, -1);
+                break;
+            }
+            case "=":
+                try{
+                    output.innerText= eval(output.innerText);
+                } catch{
+                    output.innerText = "Error!"
+                }
+                break;
+                default :
+        output.innerText += e.target.innerText;
+           
+        }
+      
+
+
+       })
+      });
+
+
+    </script>
+  </body>
+</html>

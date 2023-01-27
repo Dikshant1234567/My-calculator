@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+#clear {
+  width: 25px;
+}
+.main {
+  height: 52%;
+  width: 280px;
+  margin: 10px auto;
+  border: 1px solid black;
+  background-color: beige;
+}
+.top {
+  height: 4vh;
+  margin: 10px 20px;
+
+  text-align: right;
+  font-size: 25px;
+}
+
+.bottom {
+  height: 45vh;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.key {
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightslategrey;
+  border-radius: 50%;
+}
+.key:hover {
+  background-color: brown;
+}
